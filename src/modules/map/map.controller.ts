@@ -17,6 +17,6 @@ export class MapController {
     @Get('search')
     @UsePipes(new ValidationPipe({ transform: true }))
     findByTitle(@Query() SearchMapDto: SearchMapDto): Promise<Map[]> {
-        return this.mapService.findByTitle(SearchMapDto);
+        return this.mapService.search(SearchMapDto);
     }
 }
